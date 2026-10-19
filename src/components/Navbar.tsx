@@ -18,23 +18,26 @@ export function Navbar() {
       </Link>
 
       {/* Center Nav Links (Desktop) */}
-      <nav className="hidden md:flex items-center space-x-8 lg:space-x-10 text-[13px] sm:text-[13.5px] font-normal text-zinc-300">
-        <Link href="#about" className="hover:text-white transition-colors">
-          About
+      <nav className="hidden md:flex items-center space-x-8 lg:space-x-10 text-[13px] sm:text-[13.5px] font-normal text-zinc-400">
+        <Link href="#markets" className="hover:text-white transition-colors duration-200">
+          Markets
         </Link>
-        <div className="group relative flex items-center gap-1 cursor-pointer hover:text-white transition-colors">
+        <Link href="#features" className="hover:text-white transition-colors duration-200">
+          Why Liquid
+        </Link>
+        <div className="group relative flex items-center gap-1 cursor-pointer hover:text-white transition-colors duration-200">
           <span>Trading</span>
-          <ChevronDown className="w-3 h-3 text-zinc-400 group-hover:text-white transition-colors duration-200" />
+          <ChevronDown className="w-3 h-3 text-zinc-500 group-hover:text-white transition-colors duration-200" />
         </div>
-        <Link href="#contact" className="hover:text-white transition-colors">
-          Contact
-        </Link>
-        <Link href="#faq" className="hover:text-white transition-colors">
+        <Link href="#faq" className="hover:text-white transition-colors duration-200">
           FAQ
         </Link>
-        <div className="group relative flex items-center gap-1 cursor-pointer hover:text-white transition-colors">
+        <Link href="#contact" className="hover:text-white transition-colors duration-200">
+          Contact
+        </Link>
+        <div className="group relative flex items-center gap-1 cursor-pointer hover:text-white transition-colors duration-200">
           <span>ENG</span>
-          <ChevronDown className="w-3 h-3 text-zinc-400 group-hover:text-white transition-colors duration-200" />
+          <ChevronDown className="w-3 h-3 text-zinc-500 group-hover:text-white transition-colors duration-200" />
         </div>
       </nav>
 
@@ -42,13 +45,13 @@ export function Navbar() {
       <div className="hidden md:flex items-center space-x-5">
         <button
           type="button"
-          className="text-[13px] sm:text-[13.5px] font-normal text-zinc-200 hover:text-white transition-colors cursor-pointer px-2 py-1"
+          className="text-[13px] sm:text-[13.5px] font-normal text-zinc-300 hover:text-white transition-colors duration-200 cursor-pointer px-2 py-1"
         >
           Login
         </button>
         <button
           type="button"
-          className="rounded-full bg-white text-black font-medium text-[13px] sm:text-[13.5px] px-5 py-1.5 hover:bg-zinc-200 active:scale-[0.98] transition-all cursor-pointer shadow-sm"
+          className="btn-pill text-[13px] sm:text-[13.5px] px-5 py-1.5"
         >
           Sign up
         </button>
@@ -66,13 +69,20 @@ export function Navbar() {
 
       {/* Mobile Menu Dropdown Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-4 top-16 z-40 p-6 rounded-2xl glass-card border border-white/10 flex flex-col space-y-4 shadow-2xl backdrop-blur-2xl">
+        <div className="menu-in md:hidden fixed inset-x-4 top-16 z-40 p-6 rounded-2xl glass-card border border-white/10 flex flex-col space-y-4 shadow-2xl backdrop-blur-2xl">
           <Link
-            href="#about"
+            href="#markets"
             onClick={() => setMobileMenuOpen(false)}
             className="text-sm font-medium text-zinc-200 hover:text-white py-1"
           >
-            About
+            Markets
+          </Link>
+          <Link
+            href="#features"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-sm font-medium text-zinc-200 hover:text-white py-1"
+          >
+            Why Liquid
           </Link>
           <div className="flex items-center justify-between text-sm font-medium text-zinc-200 py-1">
             <span>Trading</span>
